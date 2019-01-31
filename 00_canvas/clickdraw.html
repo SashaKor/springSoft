@@ -4,6 +4,7 @@
 <head>
 </head>
 <body>
+
 <style>
 #slate{
   border-style: solid;
@@ -11,26 +12,22 @@
 }
 .green{color : #00ff00;}
 </style>
+
 <h1 id="title"> Let's Draw! </h1>
 <!-- Clear button -->
 <button id="clr">Clear</button>
 <!-- Toggle between draw rectangle and draw dot mode ~~~~ -->
-<button id="toggle">Toggle</button>
+<button id="toggle">Rectangle</button>
 <!-- Canvas on which we draw ~~~~ -->
-<h2 id="mode" class ="green"> Click on toggle to change drawing mode </h2>
+
+<h2 id="mode" class ="green"> Click on button to toggle. Default is rectangle. </h2>
+
 <div>
 <canvas height="600" width="600" id="slate">
   Your browser does not support the canvas tag!
 </canvas>
 </div>
 
-/*
-var c = document.getElementById("slate");
-var ctx = c.getContext("2d");
-ctx.moveTo(0,0);
-ctx.lineTo(600,600);
-ctx.stroke();
-*/
 
 <script src="clickdraw.js"></script>
 </body>
