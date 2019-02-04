@@ -14,7 +14,7 @@ var ctx = c.getContext("2d");
 // given by topher
 var requestID; var radius=0; var growing = true;
 var clear= function(e){};
-var drawDot=(){
+var drawDot=function(){
 	if (growing){
 	radius+= 10;
 	ctx.beginPath();
@@ -22,7 +22,7 @@ var drawDot=(){
 	ctx.stroke()
 	ctx.fill()
 	console.log("no")}
-	//requestID= window.requestAnimationFrame(drawDot);
+	requestID= window.requestAnimationFrame(drawDot);
 };
 var stopIt= function() {
 	console.log(requestID);
