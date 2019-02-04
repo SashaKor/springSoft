@@ -1,5 +1,5 @@
 // Canvasseurs
-// Aaron Li, Aleksandra Koroza
+//
 // SoftDev2 pd8
 // K02 -- Connecting the dots
 // 2019-02-02
@@ -20,14 +20,17 @@ var drawDot=(){
 	ctx.beginPath();
 	ctx.arc(c.width/2, c.height/2, radius, 0, 2* Math.PI);
 	ctx.stroke()
-	ctx.fill()}
-	requestID= window.requestAnimationFrame(drawDot);
+	ctx.fill()
+	console.log("no")}
+	//requestID= window.requestAnimationFrame(drawDot);
 };
 var stopIt= function() {
 	console.log(requestID);
 	// you only need one requestAnimationFrame()
 	window.cancelAnimiationFrame(requestID);
 };
+
+
 dotButton.addEventListener("click",drawDot);
 stopButton.addEventListener("click",stopIt);
 
