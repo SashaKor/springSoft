@@ -11,6 +11,7 @@ connection=pymongo.MongoClient(SERVER_ADDR)
 db= connection.test
 collection= db.restaurants
 
+
 # Finding all restaurants within a specified borough
 def findBorough(b):
     if type(b) == type("abc"): #checking that its a string
