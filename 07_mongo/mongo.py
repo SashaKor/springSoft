@@ -2,7 +2,11 @@
 # SoftDev2 pd8
 # K07 -- Import/Export Bank
 # 2019-02-29
-
+'''
+We used the English history dataset (found here https://github.com/jdorfman/awesome-json-datasets). The
+set is a collection of historical events. Each entry has an associated date, description, location, and associated literature.
+The collection was imported using the mongoimport command on our droplets.
+'''
 import pymongo
 
 #SERVER_ADDR = "69.55.59.139"
