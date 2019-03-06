@@ -27,19 +27,17 @@ import json
 
 #SERVER_ADDR = "69.55.59.139" #Aaron
 SERVER_ADDR = "178.128.156.17" #AK
-connection = pymongo.MongoClient(SERVER_ADDR)
-db = connection.aaronoza
+client = pymongo.MongoClient(SERVER_ADDR)
+db = client.aaronoza
 col = db.history #hw
 
-file= open('history.json').read()
-data= json.loads(file)
+with open('history2.json') as f:
+    lines = f.readlines()
+    for line in lines:
+        data = json.loads(line)
+        #print(line)
+        col.insert(data)
 
-col.insert_many(data)
-#with open('history.json') as h:
-#    file_data = json.load(h)
-
-#col.insert(file_data)
-#connection.close()
 
 # Given a year, return historical entries found given input:
 # an integer year (eg: 900)
@@ -107,3 +105,4 @@ def find(phrase):
 #yearDesc(100)
 placeDesc("Americas")
 find("valid")
+print
