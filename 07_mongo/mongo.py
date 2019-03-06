@@ -6,7 +6,7 @@
 # 2019-02-29
 
 '''
-We used the English history dataset (found here http://www.vizgr.org/historical-events/search.php?format=json&begin_date=-3000000&end_date=20151231&lang=en). 
+We used the English history dataset (found here http://www.vizgr.org/historical-events/search.php?format=json&begin_date=-3000000&end_date=20151231&lang=en).
 The set is a collection of historical events. Each entry has an associated date, description, location, and associated literature.
 The collection was imported using the mongoimport command on our droplets.
 '''
@@ -18,15 +18,28 @@ http://www.vizgr.org/historical-events/search.php?format=json&begin_date=-300000
 
 1) Click and download the link above to download the dataset, name it whatever you want with a .json file type.
 2) run $ python3 findrep.py <name_of_ur_file>.json to convert the file into a valid json format
+3) run mongod on your droplet ($mongod -v --bind_ip_all --noauth --dbpath db3/) <--- specific for AK
+4)
 '''
 
 import pymongo
+import json
 
-SERVER_ADDR = "69.55.59.139"
-# SERVER_ADDR = "178.128.156.17"
+#SERVER_ADDR = "69.55.59.139" #Aaron
+SERVER_ADDR = "178.128.156.17" #AK
 connection = pymongo.MongoClient(SERVER_ADDR)
 db = connection.aaronoza
 col = db.hw
+
+file= open('history.json').read()
+data= json.loads(file)
+
+x= col.insert_many(data)
+#with open('history.json') as h:
+#    file_data = json.load(h)
+
+#col.insert(file_data)
+#connection.close()
 
 # Given a year, return historical entries found given input:
 # an integer year (eg: 900)
