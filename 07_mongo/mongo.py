@@ -18,7 +18,7 @@ http://www.vizgr.org/historical-events/search.php?format=json&begin_date=-300000
 
 1) Click and download the link above to download the dataset, name it whatever you want with a .json file type.
 2) run $ python3 findrep.py <name_of_ur_file>.json to convert the file into a valid json format
-3) run mongod on your droplet ($mongod -v --bind_ip_all --noauth --dbpath db3/) <--- specific for AK
+3) run mongod on your droplet ($mongod -v --bind_ip_all --noauth --dbpath db2/) <--- specific for AK
 4) we then insert the reformatted json docs into the collection
 '''
 
@@ -37,8 +37,8 @@ with open('history2.json') as f:
     lines = f.readlines()
     for line in lines:
         data = json.loads(line)
-        #print(line)
-        col.insert(data)
+        print(line)
+        col.insert_one(data)
 
 
 # Given a year, return historical entries found given input:
@@ -93,12 +93,13 @@ def placeDesc(place):
                 "event.category2": place
             }
         )
-        #[print(i["event"]["description"], "\n") for i in cursor]
+        #[print(i["event"]["description"], "\n") for i in cursor] #diff way of printing
         lst=[]
         for i in cursor:
             lst.append(i["event"]["description"])
         print(lst)
         return lst
+
     else:
         print("Please input a valid place.\n")
 
