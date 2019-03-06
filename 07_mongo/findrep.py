@@ -16,9 +16,9 @@ def convert(name):
     ret = line.replace("{\"result\": {\"count\": \"37859\"}", "{\"result\": {\"count\": \"37859\"}}")
     ret = ret.replace(", \"event\":", "}\n{\"event\":")
     ret = ret[:-1]
-    res = "["
+    res = "{"
     res += ret
-    res += "]"
+    res += "}"
     #print(ret)
     # print(line.replace("{\"event\":", "\n{\"event\":"))
     try:

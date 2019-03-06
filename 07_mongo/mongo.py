@@ -29,12 +29,12 @@ import json
 SERVER_ADDR = "178.128.156.17" #AK
 connection = pymongo.MongoClient(SERVER_ADDR)
 db = connection.aaronoza
-col = db.hw
+col = db.history #hw
 
 file= open('history.json').read()
 data= json.loads(file)
 
-x= col.insert_many(data)
+col.insert_many(data)
 #with open('history.json') as h:
 #    file_data = json.load(h)
 
@@ -103,7 +103,7 @@ def find(phrase):
         print("Please input another phrase to search! \n")
 
 # test
-yearAll(100)
-yearDesc(100)
+#yearAll(100)
+#yearDesc(100)
 placeDesc("Americas")
 find("valid")
