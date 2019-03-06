@@ -19,7 +19,7 @@ http://www.vizgr.org/historical-events/search.php?format=json&begin_date=-300000
 1) Click and download the link above to download the dataset, name it whatever you want with a .json file type.
 2) run $ python3 findrep.py <name_of_ur_file>.json to convert the file into a valid json format
 3) run mongod on your droplet ($mongod -v --bind_ip_all --noauth --dbpath db3/) <--- specific for AK
-4)
+4) we then insert the reformatted json docs into the collection
 '''
 
 import pymongo
@@ -31,6 +31,8 @@ client = pymongo.MongoClient(SERVER_ADDR)
 db = client.aaronoza
 col = db.history #hw
 
+
+#importation mechanism since our file was reformatted
 with open('history2.json') as f:
     lines = f.readlines()
     for line in lines:
@@ -51,7 +53,12 @@ def yearAll(year):
     if cursor.count() == 0:
         print("Sorry, this year wasn't found.\n")
         return
-    [print(i, "\n") for i in cursor]
+    #[print(i, "\n") for i in cursor]
+    lst=[]
+    for i in cursor:
+        lst.append(i)
+    print(lst)
+    return lst
 
 # Given a specific date, return relevant historical entry
 def yearDesc(date):
@@ -68,8 +75,13 @@ def yearDesc(date):
         print("Sorry, this year wasn't found.")
         return
     print("\n----- Descriptions found for date:", date, "-----\n")
-    [print(i["event"]["description"], "\n") for i in cursor]
+    lst=[]
+    for i in cursor:
+        lst.append(i["event"]["description"])
+    print(lst)
+    #[print(i["event"]["description"], "\n") for i in cursor]
     print("----- End of Descriptions found for date:", date, "-----\n")
+    return lst # list of relevant entries
 
 # Given a place or topic (category 2) returns relevant historical entry descriptions
 # first letter of place should be capitalized
@@ -81,7 +93,12 @@ def placeDesc(place):
                 "event.category2": place
             }
         )
-        [print(i["event"]["description"], "\n") for i in cursor]
+        #[print(i["event"]["description"], "\n") for i in cursor]
+        lst=[]
+        for i in cursor:
+            lst.append(i["event"]["description"])
+        print(lst)
+        return lst
     else:
         print("Please input a valid place.\n")
 
@@ -94,15 +111,17 @@ def find(phrase):
                 "event.lang": "en"
             }
         )
+        lst=[]
         for i in cursor:
             if phrase in i["event"]["description"]:
                 print("Date:", i["event"]["date"], "\n", i["event"]["description"], "\n")
+                lst.append(i["event"]["description"])
+        return lst
     else:
         print("Please input another phrase to search! \n")
 
 # test
-#yearAll(100)
-#yearDesc(100)
-placeDesc("Americas")
-find("valid")
-print
+yearAll(100)
+yearDesc(100)
+#placeDesc("Americas")
+#find("valid")
