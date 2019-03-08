@@ -26,22 +26,6 @@ with open('movies.json') as f:
  '''
 @app.route('/', methods=['POST','GET'])
 def index():
-    '''
-    if request.form["submit"] == "submit":
-        IP= request.form["IP"]
-        print(IP)
-        #SERVER_ADDR='104.248.53.196' #zane
-        client = MongoClient(IP, 27017)
-        db = client.MOZArella
-        collection = db.movies
-
-        with open('movies.json') as f:
-            lines = f.read()
-            data = json.loads(lines)
-            collection.insert_many(data)
-
-        return render_template("movies.html", collection) #renders movie.html with the imported collection
-    '''
     print("didnt go through")
     return render_template("ipset.html")
 
@@ -61,11 +45,11 @@ def enter():
             data = json.loads(lines)
             collection.insert_many(data)
 
-        return render_template("movies.html", collection) #renders movie.html with the imported collection
+        return render_template("movies.html", IP=IP) #renders movie.html with the imported collection
     print("stuff went down")
     return render_template("ipset.html")
 
-@app.route("/result",methods=['POST','GET'])
+@app.route("/search",methods=['POST','GET'])
 def display():
     return render_template("detail.html")
 

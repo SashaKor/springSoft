@@ -2,10 +2,10 @@
 {% block title %} IP Input {% endblock %}
 {% block content %}
 
-	    What is the IP address you want to run on?
+	   <p> What is the IP address you want to run on? </p>
 	    </br>
       <form action="/enter" method="POST">
 	        <input type="text" name= "IP" placeholder="IP" required>
-	        <input type="submit" value="submit">
+	        <input type="submit" name= "submit" value="submit">
       </form>
 {% endblock %}

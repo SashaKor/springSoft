@@ -1,14 +1,12 @@
 {% extends "template.html" %}
-{% block title %} IP Input {% endblock %}
+{% block title %} Movies {% endblock %}
 {% block content %}
 
-<form>
-	What is the name of your movie?
-	  </br>
-	    <input type="text">
-	    What is the year in which it was released?
-	    </br>
-	    <input type="text">
-	    <input type="submit">
-	</form>
+<p> IP address currently running on {{ IP }} </p>
+<p> Please input a year to find movies </p>
+ </br>
+ <form action="/search" method="POST">
+     <input type="text" name= "IP" placeholder="IP" required>
+     <input type="submit" name= "submit" value="submit">
+ </form>
 {% endblock %}
