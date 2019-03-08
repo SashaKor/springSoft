@@ -3,10 +3,12 @@
 {% block content %}
 
 <p> IP address currently running on {{ IP }} </p>
-<p> Please input a year to find movies </p>
  </br>
+
+<p> Testing first function! </p>
+ <p> Please input a year to find movies </p>
  <form action="/search" method="POST">
-     <input type="text" name= "IP" placeholder="IP" required>
-     <input type="submit" name= "submit" value="submit">
+     <input type="text" name= "year" placeholder="year" >
+     <input type="submit" name= "submit1" value="submit1">
  </form>
 {% endblock %}

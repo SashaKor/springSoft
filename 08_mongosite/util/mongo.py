@@ -1,10 +1,11 @@
 '''
 Here be our collection manipulating scripts
 '''
-def find_year(num):
+
+def find_year(num,collection):
     movies = []
     for doc in collection.find({"year" : num}):
-        ret.append(doc)
+        movies.append(doc)
     return movies
 
 '''

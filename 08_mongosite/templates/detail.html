@@ -2,10 +2,7 @@
 {% block title %} Details {% endblock %}
 {% block content %}
 
-	   <p> Movie Details </p>
-	    </br>
-      <form action="/enter" method="POST">
-	        <input type="text" name= "IP" placeholder="IP" required>
-	        <input type="submit" name= "submit" value="submit">
-      </form>
+<p> Here is what your previously called function returned: </p>
+<p> Function being tested: {{ func }} </p>
+<p> Result: {{ result }} </p>
 {% endblock %}
