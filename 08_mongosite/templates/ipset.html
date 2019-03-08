@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> Set IP </title>
-    </head>
-    <body>
-        <form>
+{% extends "template.html" %}
+{% block title %} IP Input {% endblock %}
+{% block content %}
+
 	    What is the IP address you want to run on?
 	    </br>
-	    <input type="text">
-	    <input type="submit">
-	</form> 
-    </body>
-</html>
+      <form action="/enter" method="POST">
+	        <input type="text" name= "IP" placeholder="IP" required>
+	        <input type="submit" value="submit">
+      </form>
+{% endblock %}
