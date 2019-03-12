@@ -31,7 +31,7 @@ client = pymongo.MongoClient(SERVER_ADDR)
 db = client.aaronoza
 col = db.history #hw
 
-
+''
 #importation mechanism since our file was reformatted
 with open('history2.json') as f:
     lines = f.readlines()
