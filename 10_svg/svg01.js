@@ -1,9 +1,10 @@
 var pic = document.getElementById('vimage'); //getting image
 var cl_button = document.getElementById('but_cl'); //tracking clear
 
-var prev_x = NaN; //not applicable yet
-var prev_y = NaN; // note that using null sets the values to 0,0; which is bad (line stretches to upper left)
+//var prev_x = NaN; //not applicable yet
+//var prev_y = NaN; // note that using null sets the values to 0,0; which is bad (line stretches to upper left)
 
+/*
 //func connects previous and current points
 var drawLine = (x,y) => {
   if (isNaN(prev_x) && isNaN(prev_y)){
@@ -19,23 +20,23 @@ var drawLine = (x,y) => {
   line.setAttribute('stroke', 'black');
   pic.appendChild(line); //pic now has line with specified attributes
 }
-
+*/
 //func sets circle attributes amd draws if childNodes available
-var draw = (i) => {
+var drawCircle = (i) => {
   var circ = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); //creating circles
   circ.setAttribute("cx", i.offsetX); //offset between coor and padding edge
   circ.setAttribute("cy", i.offsetY);
-  circ.setAttribute("fill", "red");
-  circ.setAttribute("stroke", "black"); //lines still overlap
+  circ.setAttribute("fill", "purple");
+  //circ.setAttribute("stroke", "black"); //lines still overlap
   circ.setAttribute("r", 20);
 
-  if (pic.childNodes.length != 0){ //means that not reset, available to draw
-    drawLine(i.offsetX, i.offsetY);
-  }
+  //if (pic.childNodes.length != 0){ //means that not reset, available to draw
+    //drawLine(i.offsetX, i.offsetY);
+  //}
 
   pic.appendChild(circ);
-  prev_x = i.offsetX; //your curr now becomes your prev
-  prev_y = i.offsetY;
+  //prev_x = i.offsetX; //your curr now becomes your prev
+  //prev_y = i.offsetY;
 };
 
 //func clears the circles by manipulating innerHTML and resetting x/y vals.
@@ -47,7 +48,7 @@ var clear = (e) => {
 };
 //you can kill off children!!
 
-pic.addEventListener('click', draw); //image responsive to clicks
+pic.addEventListener('click', drawCircle); //image responsive to clicks
 cl_button.addEventListener('click', clear); //clear button responsive to clicks
 
 
