@@ -30,6 +30,11 @@ var drawCircle = (i) => {
   //circ.setAttribute("stroke", "black"); //lines still overlap
   circ.setAttribute("r", 20);
 
+  /*
+  for i in pic.childNodes:
+      if has same cx and cy
+      setattribute to gree
+  */
   //if (pic.childNodes.length != 0){ //means that not reset, available to draw
     //drawLine(i.offsetX, i.offsetY);
   //}
