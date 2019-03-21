@@ -22,3 +22,9 @@ as a function of parent data,facilitating the creation of hierarchical DOM eleme
 
 var numbers = [4, 5, 18, 23, 42];
 d3.selectAll("div").data(numbers);
+
+/*
+While update and exit are normal selections, enter is a subclass of selection.
+This is necessary because it represents elements that do not yet exist. An enter selection
+ contains placeholders rather than DOM elements; these placeholders are simply objects with a __data__ property.
+*/
