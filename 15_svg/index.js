@@ -18,19 +18,19 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
  */
 
 // setup x
-var xValue = function(d) { return d.Calories;}, // data -> value
+var xValue = function(d) { return d.Acceleration ;}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
 // setup y
-var yValue = function(d) { return d["Protein (g)"];}, // data -> value
+var yValue = function(d) { return d["Displacement  "];}, // data -> value
     yScale = d3.scale.linear().range([height, 0]), // value -> display
     yMap = function(d) { return yScale(yValue(d));}, // data -> display
     yAxis = d3.svg.axis().scale(yScale).orient("left");
 
 // setup fill color
-var cValue = function(d) { return d.Manufacturer;},
+var cValue = function(d) { return d.Origin;},
     color = d3.scale.category10();
 
 // add the graph canvas to the body of the webpage
@@ -46,12 +46,12 @@ var tooltip = d3.select("body").append("div")
     .style("opacity", 0);
 
 // load data
-d3.csv("cereal.csv", function(error, data) {
+d3.csv("cars.csv", function(error, data) {
 
   // change string (from CSV) into number format
   data.forEach(function(d) {
-    d.Calories = +d.Calories;
-    d["Protein (g)"] = +d["Protein (g)"];
+    d.Acceleration  = +d.Acceleration ;
+    d["Acceleration "] = +d["Acceleration "];
 //    console.log(d);
   });
 
@@ -69,7 +69,7 @@ d3.csv("cereal.csv", function(error, data) {
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
-      .text("Calories");
+      .text("Acceleration ");
 
   // y-axis
   svg.append("g")
@@ -81,7 +81,7 @@ d3.csv("cereal.csv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Protein (g)");
+      .text("Displacement  ");
 
   // draw dots
   svg.selectAll(".dot")
@@ -96,7 +96,7 @@ d3.csv("cereal.csv", function(error, data) {
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
-          tooltip.html(d["Cereal Name"] + "<br/> (" + xValue(d)
+          tooltip.html(d["Car"] + "<br/> (" + xValue(d)
 	        + ", " + yValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
