@@ -56,10 +56,9 @@ def threeLoopy():
     return list
 
 #list comprehension implementation
-# def threeCompy():
-#     return = [0 for x in range(0,9) if (x < 4 or x == 6) else 1 if (x==4) else 2 if (x == 5 or x==7) else 0]
-#
-# print(threeCompy())
+def threeCompy():
+    return [0 if (x < 4 or x == 6) else 1 if (x==4) else 2 if (x == 5 or x==7) else 4 for x in range(0,9)]
+
 '''
 4. all composites on range[0,100] in ascending order
 '''
@@ -70,7 +69,6 @@ def fourLoopy():
         if len(sixLoopy(i)) > 2: #not including the num and itself
             list.append(i)
     return list
-
 
 #list comprehension implementation
 def fourCompy():
@@ -130,7 +128,7 @@ print(twoLoopy())
 print(twoCompy())
 print("~~~~~Testing Problem 3~~~~~~~")
 print(threeLoopy())
-#print(threeCompy())
+print(threeCompy())
 print("~~~~~Testing Problem 4~~~~~~~")
 print(fourLoopy())
 print(fourCompy())
