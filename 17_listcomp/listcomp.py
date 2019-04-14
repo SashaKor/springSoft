@@ -1,8 +1,14 @@
 '''
+Aleksandra K, Sophia X, Susan L. : SASS
+SoftDev2 pd8
+K #17: PPFTLCW
+2019-04-14
 
 '''
-
-#1 [00, 22, 44, 66, 88] (strings)
+'''
+1 [00, 22, 44, 66, 88] (strings)
+'''
+#loop implementation
 def oneLoopy():
     list = []
     for i in range(9):
@@ -10,14 +16,16 @@ def oneLoopy():
             list.append(str(i)+str(i))
     return list
 
-print(oneLoopy())
 
+#list comprehension implementation
 # def oneCompy():
 #     return [str(x)+str(x) if x%2 == 0 else # for x in range(9)]
 #
 # print(oneCompy())
-
-#2 [7, 17, 27, 37, 47]
+'''
+2 [7, 17, 27, 37, 47]
+'''
+#loop implementation
 def twoLoopy():
     list = []
     num = 7
@@ -26,15 +34,15 @@ def twoLoopy():
         num += 10
     return list
 
-print(twoLoopy())
 
+#list comprehension implementation
 def twoCompy():
     return [x*10+7 for x in range(5)]
 
-print(twoCompy())
-
-#3 [0,0,0,0,1,2,0,2,4]
-
+'''
+3 [0,0,0,0,1,2,0,2,4]
+'''
+#loop implementation
 def threeLoopy():
     list = []
     for i in range(9):
@@ -48,15 +56,37 @@ def threeLoopy():
             list.append(4)
     return list
 
-print(threeLoopy())
-
+#list comprehension implementation
 # def threeCompy():
 #     return = [0 for x in range(0,9) if (x < 4 or x == 6) else 1 if (x==4) else 2 if (x == 5 or x==7) else 0]
 #
 # print(threeCompy())
+'''
+4. all composites on range[0,100] in ascending order
+'''
+#loop implementation
+def fourLoopy():
+    list = []
+    for i in range(101):
+        if len(sixLoopy(i)) > 2:
+            list.append(i)
+    return list
 
 
-#6
+#list comprehension implementation
+def fourCompy():
+    return [x for x in range(101) if len(sixLoopy(x)) > 2]
+
+'''
+5.
+'''
+#loop implementation
+
+#list comprehension implementation
+'''
+6
+'''
+#loop implementation
 def sixLoopy(num):
     #all divisors of a num listed in ascending order
     list=[]
@@ -65,24 +95,29 @@ def sixLoopy(num):
             list.append(i)
     return list
 
-print(sixLoopy(36))
-
+#list comprehension implementation
 def sixCompy(num):
     return [x for x in range(1,num+1) if num%x == 0 ]
 
-print(sixCompy(36))
 
-#4 all composites on range[0,100] in ascending order
-def fourLoopy():
-    list = []
-    for i in range(101):
-        if len(sixLoopy(i)) > 2:
-            list.append(i)
-    return list
+
+'''
+TESTING
+'''
+print(oneLoopy())
+print(oneCompy())
+
+print(twoLoopy())
+print(twoCompy())
+
+print(threeLoopy())
+print(threeCompy())
 
 print(fourLoopy())
-
-def fourCompy():
-    return [x for x in range(101) if len(sixLoopy(x)) > 2]
-
 print(fourCompy())
+
+print(fiveLoopy())
+print(fiveCompy())
+
+print(sixLoopy(36))
+print(sixCompy(36))
