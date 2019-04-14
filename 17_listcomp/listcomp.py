@@ -3,8 +3,8 @@ Aleksandra K, Sophia X, Susan L. : SASS
 SoftDev2 pd8
 K #17: PPFTLCW
 2019-04-14
-
 '''
+
 '''
 1 [00, 22, 44, 66, 88] (strings)
 '''
@@ -68,7 +68,7 @@ def threeLoopy():
 def fourLoopy():
     list = []
     for i in range(101):
-        if len(sixLoopy(i)) > 2:
+        if len(sixLoopy(i)) > 2: #not including the num and itself
             list.append(i)
     return list
 
@@ -78,13 +78,8 @@ def fourCompy():
     return [x for x in range(101) if len(sixLoopy(x)) > 2]
 
 '''
-5.
-'''
-#loop implementation
-
-#list comprehension implementation
-'''
-6
+6. All divisors of a number listed in ascending order
+(done before so that primes are easier to find in prob 5.)
 '''
 #loop implementation
 def sixLoopy(num):
@@ -99,10 +94,31 @@ def sixLoopy(num):
 def sixCompy(num):
     return [x for x in range(1,num+1) if num%x == 0 ]
 
+'''
+5. primes on range [0,100], in ascending order
+'''
+#loop implementation
+def fiveLoopy():
+    composites= fourLoopy()
+    lst=[]
+    for i in range(101):
+        if i not in composites:
+            lst.append(i)
+    return lst
+
+#list comprehension implementation
+def fiveCompy():
+    composites= fourLoopy()
+    return [x for x in range(101) if x not in composites]
+
+'''
+7. Transpose a matrix (turns rows into columns and viceversa...)
+'''
 
 
 '''
 TESTING
+'''
 '''
 print(oneLoopy())
 print(oneCompy())
@@ -121,3 +137,7 @@ print(fiveCompy())
 
 print(sixLoopy(36))
 print(sixCompy(36))
+
+print(sevenLoopy())
+print(sevenCompy(36))
+'''
