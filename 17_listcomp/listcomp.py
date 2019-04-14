@@ -18,10 +18,9 @@ def oneLoopy():
 
 
 #list comprehension implementation
-# def oneCompy():
-#     return [str(x)+str(x) if x%2 == 0 else # for x in range(9)]
-#
-# print(oneCompy())
+def oneCompy():
+    return [str(x)+str(x) for x in range(9) if x%2 == 0]
+
 '''
 2 [7, 17, 27, 37, 47]
 '''
@@ -114,30 +113,33 @@ def fiveCompy():
 '''
 7. Transpose a matrix (turns rows into columns and viceversa...)
 '''
-
-
+#loop implementation
+def sevenLoopy():
+    pass
+#list comprehension implementation
+def sevenCompy():
+    pass
 '''
 TESTING
 '''
-'''
+print("~~~~~Testing Problem 1~~~~~~~")
 print(oneLoopy())
 print(oneCompy())
-
+print("~~~~~Testing Problem 2~~~~~~~")
 print(twoLoopy())
 print(twoCompy())
-
+print("~~~~~Testing Problem 3~~~~~~~")
 print(threeLoopy())
-print(threeCompy())
-
+#print(threeCompy())
+print("~~~~~Testing Problem 4~~~~~~~")
 print(fourLoopy())
 print(fourCompy())
-
+print("~~~~~Testing Problem 5~~~~~~~")
 print(fiveLoopy())
 print(fiveCompy())
-
+print("~~~~~Testing Problem 6~~~~~~~")
 print(sixLoopy(36))
 print(sixCompy(36))
-
-print(sevenLoopy())
-print(sevenCompy(36))
-'''
+print("~~~~~Testing Problem 7~~~~~~~")
+#print(sevenLoopy())
+#print(sevenCompy(36))
