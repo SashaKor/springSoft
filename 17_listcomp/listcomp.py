@@ -112,11 +112,19 @@ def fiveCompy():
 7. Transpose a matrix (turns rows into columns and viceversa...)
 '''
 #loop implementation
-def sevenLoopy():
-    pass
+def sevenLoopy(matrix):
+    list = []
+    for i in range(len(matrix[0])):
+        x = []
+        for y in range(len(matrix)):
+            x.append(matrix[y][i])
+        list.append(x)
+    return list
+
 #list comprehension implementation
-def sevenCompy():
-    pass
+def sevenCompy(matrix):
+    return [[matrix[x][i] for x in range(len(matrix))] for i in range(len(matrix[0]))]
+
 '''
 TESTING
 '''
@@ -139,5 +147,5 @@ print("~~~~~Testing Problem 6~~~~~~~")
 print(sixLoopy(36))
 print(sixCompy(36))
 print("~~~~~Testing Problem 7~~~~~~~")
-#print(sevenLoopy())
-#print(sevenCompy(36))
+print(sevenLoopy([[1,2,3],[4,5,6]]))
+print(sevenCompy([[1,2,3],[4,5,6]]))
