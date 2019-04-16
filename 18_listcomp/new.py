@@ -1,15 +1,17 @@
 '''
 Aleksandra K, Sophia X.
 SoftDev2 pd8
-K<n> -- <Title/Topic/Summary>
-<yyyy>-<mm>-<dd>
+K18 --
+2019-04-15
 '''
 
 '''
 pythogorean triples on range [1,n)
 '''
+def pyth(n):
+    return [(a,b,c) for a in range(1,n) for b in range(1,n) for c in range(1,n) if a**2+b**2==c**2]
 
-
+print(pyth(50))
 
 '''
 quicksort (...in 1 line?)
@@ -18,4 +20,10 @@ quicksort (...in 1 line?)
 q_sort left of pivot, q_sort right of pivot
 '''
 def q_sort(lst):
-    return [lst[len(lst)/2] q_sort(left)+ [pivot] + q_sort(right)]
+    if(len(lst) <= 1):
+        return lst
+    #q_sort(smaller) + pivot + q_sort(larger)
+    return q_sort([x for x in lst[1:] if x < lst[0]]) + [lst[0]] + q_sort([x for x in lst[1:] if x >= lst[0]])
+
+print(q_sort([5,2,7,3,8]))
+print(q_sort([3,6,2,8,4,9,2,6,8,4]))
