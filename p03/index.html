@@ -1,9 +1,10 @@
-<!--
+{<!--
   Team Shafakor - Shafali Gupta and Aleksandra Koroza
   SoftDev2 pd8
   P #03: You Are the Expert: TEDxSoftDev 2019
   2019-04-22
 -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,65 +15,136 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Bootsicle's Bootstrap</title>
+    <title>Shafakor's ionic</title>
   </head>
   <body>
        <!-- A navbar can be created just by using Bootstrap's nav classes. They don't require the list-based approach. -->
        <div class="container bg-white rounded">
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
               <!-- The navbar present at the top of our demo page -->
-                 <a class="navbar-brand text-info" href="#">Bootsicle</a>
+                 <a class="navbar-brand text-info" href="#">Ionic</a>
                  <!-- JavaScript is needed for the toggle to function properly in a tiny window where nav-items cannot be seen -->
                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                  </button>
                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <div class="navbar-nav">
-                           <a class="nav-item nav-link text-warning" href="#bootstrap">Bootstrap<span class="sr-only">(current)</span></a>
-                           <a class="nav-item nav-link text-info" href="#grid">Grid</a>
-                           <a class="nav-item nav-link text-warning" href="#nav">Navbar</a>
-                           <a class="nav-item nav-link text-info" href="#forms">Forms</a>
-                           <a class="nav-item nav-link text-warning" href="https://groups.google.com/a/stuy.edu/forum/#!forum/softdev18-19">QAF</a>
+                           <a class="nav-item nav-link text-warning" href="#overview">Overview<span class="sr-only">(current)</span></a>
+                           <a class="nav-item nav-link text-info" href="#structure">Structure</a>
+                           <a class="nav-item nav-link text-warning" href="#setup">Setup</a>
+                           <a class="nav-item nav-link text-info" href="#demo">Demo</a>
                       </div>
                  </div>
-                 <form class="form-inline my-2 my-lg-0">
-                   <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                  </form>
             </nav>
        </div>
        <br><br><br>
        <!-- A container all about Bootstrap! -->
-       <div id="bootstrap" class="container">
-            <h2 class="text-center text-info">What is Bootstrap?</h2>
+       <div id="overview" class="container">
+            <h2 class="text-center text-info">What is Ionic?</h2>
             <div class="row">
                  <div class="col-md-1">
                  </div>
                  <div class="col-md-10">
-                      <p>Bootstrap is an open-source web framework that lets developers forget about the complications of styling a website.
-                         Bootstrap relies on the usage of its grid system and containers, such as the one this paragraph is in right now.
-                         Containers are the most basic layout element in Bootstrap and are used to format text and other website
-                         components.
+                      <center> <img src="ionic.png" height=150 width=300 > </center>
+                      <p>Ionic Framework is an open source UI toolkit that focused on the user experience of an app (such as the controls, interactions, gestures, and animations).
+The framework provides pre-designed components which allows for easily applicable themes (given a platform).
                       </p>
-                      <h5 class="text-info">Where do I get Bootstrap?</h5>
+                      <br>
+                      <p>Ionic makes it easy to build high-performance mobile and Progressive Web Apps (or PWAs) that work on any platform or device. </p>
+                      <alert class="alert alert-warning float-right p-1 ">PWA's= web apps that load like regular web pages but can offer functionality such as working offline, push notifications, device hardware access, and app-style navigation </alert> <br>
+                      <h5 class="text-info">So who uses this?</h5>
+                      <p> Ionic is one of the most popular open source app platforms in the world! It was launched in 2013 and 5M+ apps were created by 5M+ developers in over 200 countries. </p>
+                      <br>
+                      <p> The creators of the framework hoped to streamline the process of building mobile apps that align to modern Web standards. Many groups rely on ionic to build sleek apps.
+                        Such groups include Amtrak, Nationwide, and NASA.
+                      </p>
+                      <!--- code example
                       <p> You can load Bootstrap into your <code class="highlighter-rouge">&lt;head&gt;</code> tag of your html file by copy-pasting
                            the stylesheet <code class="highligher-rouge">&lt;link&gt;</code> below.</p>
                            <pre class="shadow-sm p-1 mb-5 bg-light rounded"><code>&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous&gt;</code></pre>
-                      <alert class="alert alert-warning float-right p-1 ">You probably should <a class="text-info" href="https://groups.google.com/a/stuy.edu/d/msg/softdev18-19/NvSmaDF_sJA/ta2FO6zmAQAJ">learn more about CDNs here.</a></alert><br>
-                      <h5 class="text-info"> How do I make a container?</h5>
-                      <h7 class="text-dark">All it takes is a few divs, as seen below. </h7>
-                      <pre class="shadow-sm p-1 mb-5 bg-light rounded">
-                           <code>&lt;div class="container"&gt;
-                                &lt;div class="row"&gt;
-                                    &lt;div class="col-md-3"&gt;
-                                    This container has row of 3 columns. The maximum number of columns is 12.
-                                    &lt;/div&gt;
-                                &lt;/div&gt;
-                           &lt;/div&gt;</code></pre>
-                 </div>
-            </div>
-       </div>
-       <!-- A container all about Bootstrap grids! -->
+                      --->
+                    </div>
+                    </div>
+                  </div>
+                      <div id="structure" class="container">
+                        <div class="row">
+                             <div class="col-md-1">
+                             </div>
+                             <div class="col-md-10">
+                               <h5 class="text-info"> So how does ionic do its magic? </h5>
+                               <h7 class="text-dark">The components are summarized below: </h7>
+                               <img src="comp.webp" >
+                               <h7 class="text-dark">Chart Explanation: </h7>
+                               <p> <b>Angular</b> is a popular JS framework which provides the developer with the right tools to build a web app
+                               while also defining how the code should be organized. Many modern websites rely heavily on JS.</p> <br>
+                               <p> <b>Ionic </b> provides a collection of components that mimic the native look, feel and functionality of each mobile platform.
+                                 Examples of these components include buttons, tabs, menus, lists, cards, modals, and so on. </p> <br>
+                               <p><b>HTML, CSS, and JS </b> are then used to add whatever styles and features you want to your site.</p> <br>
+                               <p><b>Cordova</b> is yet another framework that makes it easy to create an app that runs a web app in a webview.
+                               Ionic uses it to build and run apps as native apps on each device.</p> <br>
+                               <p>Finally, <b>deploy</b> to your preferred market! </p><br>
+                             <!---
+                               <pre class="shadow-sm p-1 mb-5 bg-light rounded">
+                                    <code>&lt;div class="container"&gt;
+                                         &lt;div class="row"&gt;
+                                             &lt;div class="col-md-3"&gt;
+                                             This container has row of 3 columns. The maximum number of columns is 12.
+                                             &lt;/div&gt;
+                                         &lt;/div&gt;
+                                    &lt;/div&gt;</code></pre>
+                               --->
+                                </div>
+                                </div>
+                              </div>
+                              <div id="setup" class="container">
+                                <div class="row">
+                                     <div class="col-md-1">
+                                     </div>
+                                     <div class="col-md-10">
+                                       <h5 class="text-info"> So how do we set this up? </h5>
+                                       <h7 class="text-dark">Setting up is easy, it should only take a few minutes! </h7>
+                                       <p> You will need a Node and npm environment. Node is a runtime environment that allows JS to be written on the server-side.
+                                        It is often used to build dev tools such as the Ionic CLI (Command Line Interface). Npm is the package manager for node; it allows developers to install, share, and package node modules. Ionic can be installed with npm.
+                                      </p> <br>
+                                        <p> Ionic Apps are created and developed primarily through the CLI. To Running the ionic start command together with the desired name and either a pre-made template or a blank one
+                                          Then, immediately serve to see what you got in the browser! </p> <br>
+                                          <p> here is the code for the commands: (code snippet)</p> <br>
+                                          <p> here are links to various setups (windows +ios)</p> <br>
+                                     <!---
+                                       <pre class="shadow-sm p-1 mb-5 bg-light rounded">
+                                            <code>&lt;div class="container"&gt;
+                                                 &lt;div class="row"&gt;
+                                                     &lt;div class="col-md-3"&gt;
+                                                     This container has row of 3 columns. The maximum number of columns is 12.
+                                                     &lt;/div&gt;
+                                                 &lt;/div&gt;
+                                            &lt;/div&gt;</code></pre>
+                                       --->
+                                        </div>
+                                        </div>
+                                      </div>
+                                      <div id="demo" class="container">
+                                        <div class="row">
+                                             <div class="col-md-1">
+                                             </div>
+                                             <div class="col-md-10">
+                                               <h5 class="text-info"> Let's see it in action! </h5>
+                                               <h7 class="text-dark">Structure of a basic project </h7>
+                                               <p> </p><br>
+                                             <!---
+                                               <pre class="shadow-sm p-1 mb-5 bg-light rounded">
+                                                    <code>&lt;div class="container"&gt;
+                                                         &lt;div class="row"&gt;
+                                                             &lt;div class="col-md-3"&gt;
+                                                             This container has row of 3 columns. The maximum number of columns is 12.
+                                                             &lt;/div&gt;
+                                                         &lt;/div&gt;
+                                                    &lt;/div&gt;</code></pre>
+                                               --->
+                                                </div>
+                                                </div>
+                                              </div>
+       <!-- A container all about Bootstrap grids!
        <div class="container">
             <div class="row">
                  <div class="col-md-1">
@@ -149,7 +221,8 @@
                  </div>
             </div>
        </div>
-       <!-- Container for navbar -->
+     -->
+       <!-- Container for navbar
        <div id="nav" class="container">
             <div class="row">
                  <div class="col-md-1">
@@ -192,8 +265,8 @@
                  </div>
             </div>
 
-       </div>
-       <!-- Container for forms -->
+       </div> -->
+       <!-- Container for forms
        <div id="forms" class="container">
             <div class="row">
                  <div class="col-md-1">
@@ -209,7 +282,7 @@
               <div class="col-md-1">
               </div>
               <div class="col-md-7">
-              <!-- Again, we are using bt's grid system to establish the space our form takes up -->
+
             <form>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -252,9 +325,10 @@
                  </div>
             </div>
 
-       </div>
+       </div> -->
        <br><br><br><br>
-       <footer class="-footer bg-dark fixed-bottom text-right text-light">&copy;Bootsicle &mdash; Shafali Gupta and Aleksandra Koroza</footer>
+       <footer class="-footer bg-dark fixed-bottom text-right text-light">&copy;Shafakor &mdash; Shafali Gupta and Aleksandra Koroza</footer>
 
   </body>
 </html>
+}
